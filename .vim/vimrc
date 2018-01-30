@@ -1,0 +1,28 @@
+colorscheme badwolf
+syntax on
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+set expandtab
+set number
+
+set showcmd
+set cursorline
+
+set showmatch
+
+set incsearch
+set hlsearch
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" remove trailing spaces on specific filetypes
+autocmd FileType rake,slim,coffee,ruby,vue,sass,yml autocmd BufWritePre <buffer> %s/\s\+$//e
