@@ -16,6 +16,8 @@ set showmatch
 set incsearch
 set hlsearch
 
+set autoindent
+
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
