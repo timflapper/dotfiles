@@ -1,4 +1,8 @@
 colorscheme badwolf
+
+set nocompatible
+
+filetype plugin on
 syntax on
 
 set tabstop=2
