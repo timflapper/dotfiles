@@ -7,3 +7,6 @@
 [submodule ".vim/pack/plugins/start/vim-slim"]
 	path = .vim/pack/plugins/start/vim-slim
 	url = https://github.com/slim-template/vim-slim.git
+[submodule ".vim/pack/plugins/start/ctrlp.vim"]
+	path = .vim/pack/plugins/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
