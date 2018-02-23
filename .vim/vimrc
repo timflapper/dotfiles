@@ -48,3 +48,5 @@ nnoremap , <C-w>w
 autocmd FileType rake,slim,coffee,ruby,vue,sass,yml autocmd BufWritePre <buffer> %s/\s\+$//e
 
 set colorcolumn=80
+
+set rtp+=/usr/local/opt/fzf
