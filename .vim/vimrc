@@ -43,7 +43,7 @@ nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 nnoremap , <C-w>w
-
+nnoremap <C-p> :Files<CR>
 " remove trailing spaces on specific filetypes
 autocmd FileType rake,slim,coffee,ruby,vue,sass,yml autocmd BufWritePre <buffer> %s/\s\+$//e
 
