@@ -27,10 +27,13 @@ set showmatch
 set incsearch
 set hlsearch
 
+set smartindent
 set autoindent
 
 set splitright
 set splitbelow
+
+filetype indent on
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -48,7 +51,7 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap , <C-w>w
 nnoremap <C-p> :Files<CR>
 " remove trailing spaces on specific filetypes
-autocmd FileType rake,slim,coffee,ruby,vue,sass,yml autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType rake,slim,coffee,ruby,vue,sass,yml,tf autocmd BufWritePre <buffer> %s/\s\+$//e
 
 set colorcolumn=80
 
