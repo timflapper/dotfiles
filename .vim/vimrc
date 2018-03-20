@@ -48,6 +48,11 @@ inoremap <Right> <NOP>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
+nnoremap <leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <leader>s :call RunNearestSpec()<CR>
+nnoremap <leader>l :call runLastSpec()<CR>
+nnoremap <leader>a :call RunAllSpecs()<CR>
+
 nnoremap , <C-w>w
 nnoremap <C-p> :Files<CR>
 " remove trailing spaces on specific filetypes
