@@ -53,6 +53,8 @@ nnoremap <leader>s :call RunNearestSpec()<CR>
 nnoremap <leader>l :call runLastSpec()<CR>
 nnoremap <leader>a :call RunAllSpecs()<CR>
 
+let g:rspec_command = "Dispatch rspec {spec}"
+
 nnoremap <leader>; :AV<CR>
 
 nnoremap , <C-w>w
