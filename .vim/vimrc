@@ -60,7 +60,6 @@ let g:rspec_command = "Dispatch rspec {spec}"
 
 nnoremap <leader>; :AV<CR>
 
-nnoremap , <C-w>w
 nnoremap <C-p> :Files<CR>
 " remove trailing spaces on specific filetypes
 autocmd FileType rake,slim,coffee,ruby,vue,sass,yml,tf autocmd BufWritePre <buffer> %s/\s\+$//e
@@ -68,3 +67,6 @@ autocmd FileType rake,slim,coffee,ruby,vue,sass,yml,tf autocmd BufWritePre <buff
 set colorcolumn=80
 
 set rtp+=/usr/local/opt/fzf
+
+let ruby_fold = 1
+set foldlevelstart=99
