@@ -68,6 +68,3 @@ autocmd FileType rake,slim,coffee,javascript,ruby,vue,sass,yml,tf autocmd BufWri
 set colorcolumn=80
 
 set rtp+=/usr/local/opt/fzf
-
-let ruby_fold = 1
-set foldlevelstart=99
