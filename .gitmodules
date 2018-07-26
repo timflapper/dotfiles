@@ -37,3 +37,6 @@
 [submodule ".vim/pack/plugins/start/vim-javascript"]
 	path = .vim/pack/plugins/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
+[submodule ".vim/pack/plugins/start/scss-syntax.vim"]
+	path = .vim/pack/plugins/start/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim
