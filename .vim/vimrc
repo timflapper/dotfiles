@@ -69,6 +69,7 @@ autocmd FileType rake,slim,coffee,javascript,ruby,vue,sass,scss,yml,tf autocmd B
 
 augroup filetypedetect
   au BufRead,BufNewFile *.axlsx setfiletype ruby
+  au BufRead,BufNewFile *.jb setfiletype ruby
 augroup END
 
 set colorcolumn=80
