@@ -75,3 +75,5 @@ augroup END
 set colorcolumn=80
 
 set rtp+=/usr/local/opt/fzf
+
+let g:slime_target = "tmux"
