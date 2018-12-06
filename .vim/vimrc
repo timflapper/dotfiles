@@ -59,7 +59,8 @@ nnoremap <leader>l :call runLastSpec()<CR>
 nnoremap <leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_command = "Dispatch rspec {spec}"
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag -f -g ""'
+let g:ackprg = 'ag --vimgrep'
 
 nnoremap <leader>; :AV<CR>
 
