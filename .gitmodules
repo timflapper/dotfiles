@@ -46,3 +46,6 @@
 [submodule ".vim/pack/plugins/start/vim-slime"]
 	path = .vim/pack/plugins/start/vim-slime
 	url = git@github.com:jpalardy/vim-slime.git
+[submodule ".vim/pack/plugins/start/vim-stylus"]
+	path = .vim/pack/plugins/start/vim-stylus
+	url = git@github.com:wavded/vim-stylus.git
