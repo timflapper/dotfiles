@@ -73,6 +73,8 @@ augroup filetypedetect
   au BufRead,BufNewFile *.jb setfiletype ruby
 augroup END
 
+autocmd FileType vue syntax sync fromstart
+
 set colorcolumn=80
 
 set rtp+=/usr/local/opt/fzf
@@ -80,3 +82,11 @@ set rtp+=/usr/local/opt/fzf
 let g:slime_target = "tmux"
 
 set clipboard=unnamed
+
+let g:ale_sign_column_always = 1
+let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
+let g:ale_linters = {'vue': ['eslint', 'vls']}
+let g:ale_lint_delay = 1000
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
