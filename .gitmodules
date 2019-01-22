@@ -55,3 +55,6 @@
 [submodule ".vim/pack/plugins/start/vim-jest"]
 	path = .vim/pack/plugins/start/vim-jest
 	url = git@github.com:jamestthompson3/vim-jest.git
+[submodule ".vim/pack/plugins/start/vim-surround"]
+	path = .vim/pack/plugins/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
