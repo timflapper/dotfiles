@@ -1,7 +1,8 @@
 [ -f ~/.zsh_profile ] && source ~/.zsh_profile
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/Library/Android/sdk/build-tools/28.0.3:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -68,11 +69,10 @@ plugins=(
   history
   history-substring-search
   node
-  sublime
   brew
   rails
   rake
-  bunder
+  bundler
   zsh_reload
   docker
   aws
@@ -134,5 +134,8 @@ if [ -f '/usr/local/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/opt
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'; fi
+
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
 
 source ~/.zsh_profile
