@@ -1,9 +1,12 @@
-colorscheme badwolf
-
 set nocompatible
+
+colorscheme badwolf
 
 filetype plugin on
 syntax on
+
+set visualbell
+set noerrorbells
 
 set tabstop=2
 set softtabstop=2
@@ -14,6 +17,8 @@ set backspace=indent,eol,start
 set expandtab
 set number
 set relativenumber
+
+set re=1
 
 " Remap C-c to Esc to trigger InsertLeave
 inoremap <C-c> <Esc>
