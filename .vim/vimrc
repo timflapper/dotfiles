@@ -71,7 +71,7 @@ nnoremap <leader>; :AV<CR>
 
 nnoremap <C-p> :Files<CR>
 " remove trailing spaces on specific filetypes
-autocmd FileType html,rake,slim,coffee,javascript,ruby,vue,sass,scss,yml,tf,stylus autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType html,rake,slim,coffee,javascript,ruby,vue,sass,scss,yml,tf,stylus,go autocmd BufWritePre <buffer> %s/\s\+$//e
 
 augroup filetypedetect
   au BufRead,BufNewFile *.axlsx setfiletype ruby
@@ -97,3 +97,5 @@ let g:ale_ruby_rubocop_options = '-c ./.rubocop.yml'
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+map <leader>fj <Esc>:%!jq '.'<CR>
