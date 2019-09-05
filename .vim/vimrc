@@ -99,3 +99,19 @@ nmap <C-k> :ALENext<cr>
 nmap <C-j> :ALEPrevious<cr>
 
 map <leader>fj <Esc>:%!jq '.'<CR>
+
+" Ctags stuff
+let g:auto_ctags = 1
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
