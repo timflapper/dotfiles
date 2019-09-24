@@ -70,3 +70,6 @@
 [submodule ".vim/pack/plugins/start/auto-ctags.vim"]
 	path = .vim/pack/plugins/start/auto-ctags.vim
 	url = git@github.com:soramugi/auto-ctags.vim.git
+[submodule ".vim/pack/plugins/start/vim-fugitive"]
+	path = .vim/pack/plugins/start/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git

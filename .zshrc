@@ -135,6 +135,8 @@ if [ -f '/usr/local/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/opt
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'; fi
 
+if [ -f '~/.bin/tmuxinator.zsh' ]; then . '~/.bin/tmuxinator.zsh'; fi
+
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 
