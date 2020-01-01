@@ -12,3 +12,5 @@
 tags
 
 *.orig
+
+.DS_Store
