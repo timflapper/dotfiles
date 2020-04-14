@@ -12,7 +12,11 @@ export LC_ALL="en_US.UTF-8"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+if [ "$(uname)" = "Darwin" ]; then
+  ZSH_THEME="robbyrussell"
+else
+  ZSH_THEME="agnoster"
+fi
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -63,20 +67,30 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  terminalapp
-  history
-  history-substring-search
-  node
-  brew
-  rails
-  rake
-  bundler
-  zsh_reload
-  docker
-  aws
-)
+#
+if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
+  plugins=(
+    git
+    terminalapp
+    history
+    history-substring-search
+    node
+    brew
+    rails
+    rake
+    bundler
+    zsh_reload
+    docker
+    aws
+  )
+else
+  plugins=(
+    git
+    history
+    history-substring-search
+    zsh_reload
+  )
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,7 +115,9 @@ fi
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 
-eval "$(rbenv init -)"
+if [ "$(uname)" = "Darwin" ]; then
+  eval "$(rbenv init -)"
+fi
 
 export EDITOR="vim -f"
 export VISUAL="$EDITOR"
@@ -117,7 +133,9 @@ alias e="vim"
 alias zshconfig="e ~/.zshrc"
 alias ohmyzsh="e ~/.oh-my-zsh"
 
-alias ctags="`brew --prefix`/bin/ctags"
+if [ "$(uname)" = "Darwin" ]; then
+  alias ctags="`brew --prefix`/bin/ctags"
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -139,5 +157,3 @@ if [ -f '~/.bin/tmuxinator.zsh' ]; then . '~/.bin/tmuxinator.zsh'; fi
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-
-source ~/.zsh_profile

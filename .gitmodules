@@ -76,3 +76,6 @@
 [submodule ".vim/pack/plugins/start/vim-terraform"]
 	path = .vim/pack/plugins/start/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule ".vim/pack/plugins/start/vim-kerboscript"]
+	path = .vim/pack/plugins/start/vim-kerboscript
+	url = https://github.com/yump/vim-kerboscript
