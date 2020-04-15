@@ -64,7 +64,7 @@ nnoremap <leader>l :call runLastSpec()<CR>
 nnoremap <leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_command = "Dispatch rspec {spec}"
-let $FZF_DEFAULT_COMMAND = 'ag --ignore node_modules -f -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --ignore node_modules -i -s -f -g ""'
 let g:ackprg = 'ag --ignore node_modules -f --vimgrep'
 
 nnoremap <leader>; :AV<CR>
@@ -95,8 +95,8 @@ let g:ale_lint_on_text_changed = 'never'
 
 let g:ale_ruby_rubocop_options = '-c ./.rubocop.yml'
 
-nmap <C-k> :ALENext<cr>
-nmap <C-j> :ALEPrevious<cr>
+nmap <silent> <leader>lj :ALENext<cr>
+nmap <silent> <leader>lk :ALEPrevious<cr>
 
 map <leader>fj <Esc>:%!jq '.'<CR>
 
@@ -115,3 +115,4 @@ let g:tagbar_type_ruby = {
 \ }
 
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
+nnoremap Q <Nop>
