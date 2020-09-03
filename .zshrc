@@ -1,6 +1,7 @@
 [ -f ~/.zsh_profile ] && source ~/.zsh_profile
 
 # If you come from bash you might have to change your $PATH.
+export PATH="/usr/local/sbin:$PATH"
 export PATH=$HOME/Library/Android/sdk/build-tools/28.0.3:$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 
@@ -82,6 +83,7 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
     zsh_reload
     docker
     aws
+    ssh-agent
   )
 else
   plugins=(
@@ -89,6 +91,7 @@ else
     history
     history-substring-search
     zsh_reload
+    ssh-agent
   )
 fi
 
