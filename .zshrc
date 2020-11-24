@@ -82,8 +82,8 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
     bundler
     zsh_reload
     docker
-    aws
     ssh-agent
+    vi-mode
   )
 else
   plugins=(
@@ -92,6 +92,7 @@ else
     history-substring-search
     zsh_reload
     ssh-agent
+    vi-mode
   )
 fi
 
@@ -147,7 +148,7 @@ export PATH=./bin:$PATH
 
 export GPG_TTY=$(tty)
 
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --ignore node_modules -i -f -g ""'
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 # The next line updates PATH for the Google Cloud SDK.

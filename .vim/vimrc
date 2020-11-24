@@ -64,9 +64,9 @@ nnoremap <leader>l :call runLastSpec()<CR>
 nnoremap <leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_command = "Dispatch rspec {spec}"
-let $FZF_DEFAULT_COMMAND = 'ag --ignore node_modules -i -s -f -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore node_modules -i -f -g ""'
+let $FZF_DEFAULT_OPTS = '-i'
 let g:ackprg = 'ag --ignore node_modules -f --vimgrep'
-
 nnoremap <leader>; :AV<CR>
 
 nnoremap <C-p> :Files<CR>
