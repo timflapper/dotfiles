@@ -116,3 +116,7 @@ let g:tagbar_type_ruby = {
 
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 nnoremap Q <Nop>
+
+let g:fzf_layout = { 'down': '40%' }
+
+nmap <leader><leader><leader><leader><leader><leader>l <Plug>NetrwRefresh
