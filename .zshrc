@@ -151,13 +151,9 @@ export GPG_TTY=$(tty)
 export FZF_DEFAULT_COMMAND='ag --ignore node_modules -i -f -g ""'
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/opt/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/usr/local/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'; fi
-
 if [ -f '~/.bin/tmuxinator.zsh' ]; then . '~/.bin/tmuxinator.zsh'; fi
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
+
+source /usr/local/opt/google-cloud-sdk/path.zsh.inc
