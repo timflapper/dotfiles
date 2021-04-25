@@ -2,7 +2,7 @@
 
 # If you come from bash you might have to change your $PATH.
 export PATH="/usr/local/sbin:$PATH"
-export PATH=$HOME/Library/Android/sdk/build-tools/28.0.3:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/Library/Android/sdk/build-tools/28.0.3:$HOME/bin:$HOME/.bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 
 # Path to your oh-my-zsh installation.
@@ -126,8 +126,7 @@ fi
 export EDITOR="vim -f"
 export VISUAL="$EDITOR"
 
-export GREP_OPTIONS="--color=auto"
-
+alias grep="grep --color=auto"
 alias lss="ls -laGFh"
 
 alias be="bundle exec"
@@ -155,5 +154,3 @@ if [ -f '~/.bin/tmuxinator.zsh' ]; then . '~/.bin/tmuxinator.zsh'; fi
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-
-source /usr/local/opt/google-cloud-sdk/path.zsh.inc

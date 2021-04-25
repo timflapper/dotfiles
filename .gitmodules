@@ -79,3 +79,6 @@
 [submodule ".vim/pack/plugins/start/vim-kerboscript"]
 	path = .vim/pack/plugins/start/vim-kerboscript
 	url = https://github.com/yump/vim-kerboscript
+[submodule ".vim/pack/plugins/start/omnisharp-vim"]
+	path = .vim/pack/plugins/start/omnisharp-vim
+	url = git@github.com:OmniSharp/omnisharp-vim.git
