@@ -89,38 +89,7 @@ let g:slime_target = "tmux"
 
 set clipboard=unnamed
 
-let g:ale_sign_column_always = 1
-let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
-let g:ale_linters = {'vue': ['eslint', 'vls']}
-let g:ale_lint_on_text_changed = 'never'
-
-let g:ale_ruby_rubocop_executable = 'rubocop'
-
-let g:ruby_indent_assignment_style = 'variable'
-
-nmap <silent> <leader>lj :ALENext<cr>
-nmap <silent> <leader>lk :ALEPrevious<cr>
-
 map <leader>fj <Esc>:%!jq '.'<CR>
-
-" Ctags stuff
-" let g:auto_ctags = 1
-
-" let g:tagbar_type_ruby = {
-"     \ 'kinds' : [
-"         \ 'm:modules',
-"         \ 'c:classes',
-"         \ 'd:describes',
-"         \ 'C:contexts',
-"         \ 'f:methods',
-"         \ 'F:singleton methods'
-"     \ ]
-" \ }
-
-" nnoremap <silent> <Leader>b :TagbarToggle<CR>
-
-" Omnicompletion
-set omnifunc=syntaxcomplete#Complete
 
 " coc.vim configuration
 set signcolumn=number

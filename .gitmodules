@@ -49,9 +49,6 @@
 [submodule ".vim/pack/plugins/start/vim-stylus"]
 	path = .vim/pack/plugins/start/vim-stylus
 	url = git@github.com:wavded/vim-stylus.git
-[submodule ".vim/pack/plugins/start/ale"]
-	path = .vim/pack/plugins/start/ale
-	url = git@github.com:w0rp/ale.git
 [submodule ".vim/pack/plugins/start/vim-jest"]
 	path = .vim/pack/plugins/start/vim-jest
 	url = git@github.com:jamestthompson3/vim-jest.git
@@ -64,12 +61,6 @@
 [submodule ".vim/pack/plugins/start/vim-go"]
 	path = .vim/pack/plugins/start/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule ".vim/pack/plugins/start/tagbar"]
-	path = .vim/pack/plugins/start/tagbar
-	url = git@github.com:majutsushi/tagbar.git
-[submodule ".vim/pack/plugins/start/auto-ctags.vim"]
-	path = .vim/pack/plugins/start/auto-ctags.vim
-	url = git@github.com:soramugi/auto-ctags.vim.git
 [submodule ".vim/pack/plugins/start/vim-fugitive"]
 	path = .vim/pack/plugins/start/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
