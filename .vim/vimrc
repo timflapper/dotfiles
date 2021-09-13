@@ -103,6 +103,7 @@ nmap <silent> <leader>lk :ALEPrevious<cr>
 
 map <leader>fj <Esc>:%!jq '.'<CR>
 
+" Ctags stuff
 " let g:auto_ctags = 1
 
 " let g:tagbar_type_ruby = {
@@ -117,6 +118,9 @@ map <leader>fj <Esc>:%!jq '.'<CR>
 " \ }
 
 " nnoremap <silent> <Leader>b :TagbarToggle<CR>
+
+" Omnicompletion
+set omnifunc=syntaxcomplete#Complete
 
 " coc.vim configuration
 set signcolumn=number
