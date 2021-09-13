@@ -130,6 +130,7 @@ alias grep="grep --color=auto"
 alias lss="ls -laGFh"
 
 alias be="bundle exec"
+alias brt="bundle exec rails test"
 
 alias e="vim"
 
@@ -154,3 +155,17 @@ if [ -f '~/.bin/tmuxinator.zsh' ]; then . '~/.bin/tmuxinator.zsh'; fi
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
+
+source /usr/local/opt/google-cloud-sdk/path.zsh.inc
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc

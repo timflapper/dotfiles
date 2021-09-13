@@ -66,10 +66,11 @@ nnoremap <leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "Dispatch rspec {spec}"
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore node_modules -i -f -g ""'
 let $FZF_DEFAULT_OPTS = '-i'
-let g:ackprg = 'ag --ignore node_modules -f --vimgrep'
+let g:ackprg = 'ag --ignore node_modules -f --vimgrep -i'
 nnoremap <leader>; :AV<CR>
 
 nnoremap <C-p> :Files<CR>
+nnoremap <C-@> :BLine<CR>
 " remove trailing spaces on specific filetypes
 autocmd FileType html,rake,slim,coffee,javascript,ruby,vue,sass,scss,yml,tf,stylus,go autocmd BufWritePre <buffer> %s/\s\+$//e
 
@@ -93,31 +94,64 @@ let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
 let g:ale_linters = {'vue': ['eslint', 'vls']}
 let g:ale_lint_on_text_changed = 'never'
 
-let g:ale_ruby_rubocop_options = '-c ./.rubocop.yml'
+let g:ale_ruby_rubocop_executable = 'rubocop'
+
+let g:ruby_indent_assignment_style = 'variable'
 
 nmap <silent> <leader>lj :ALENext<cr>
 nmap <silent> <leader>lk :ALEPrevious<cr>
 
 map <leader>fj <Esc>:%!jq '.'<CR>
 
-" Ctags stuff
-let g:auto_ctags = 1
+" let g:auto_ctags = 1
 
-" Omnicompletion
-set omnifunc=syntaxcomplete#Complete
+" let g:tagbar_type_ruby = {
+"     \ 'kinds' : [
+"         \ 'm:modules',
+"         \ 'c:classes',
+"         \ 'd:describes',
+"         \ 'C:contexts',
+"         \ 'f:methods',
+"         \ 'F:singleton methods'
+"     \ ]
+" \ }
 
-let g:tagbar_type_ruby = {
-    \ 'kinds' : [
-        \ 'm:modules',
-        \ 'c:classes',
-        \ 'd:describes',
-        \ 'C:contexts',
-        \ 'f:methods',
-        \ 'F:singleton methods'
-    \ ]
-\ }
+" nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
+" coc.vim configuration
+set signcolumn=number
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Disable Ex Mode
 nnoremap Q <Nop>
 
 let g:fzf_layout = { 'down': '40%' }
