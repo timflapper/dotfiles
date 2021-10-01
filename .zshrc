@@ -13,11 +13,11 @@ export LC_ALL="en_US.UTF-8"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-if [ "$(uname)" = "Darwin" ]; then
+# if [ "$(uname)" = "Darwin" ]; then
   ZSH_THEME="robbyrussell"
-else
-  ZSH_THEME="agnoster"
-fi
+# else
+#   ZSH_THEME="agnoster"
+# fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
