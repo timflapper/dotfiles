@@ -137,10 +137,6 @@ alias e="vim"
 alias zshconfig="e ~/.zshrc"
 alias ohmyzsh="e ~/.oh-my-zsh"
 
-if [ "$(uname)" = "Darwin" ]; then
-  alias ctags="`brew --prefix`/bin/ctags"
-fi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Add local bin directory to path for easy access

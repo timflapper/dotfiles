@@ -1,6 +1,4 @@
 {
   "solargraph.diagnostics": true,
-  "solargraph.formatting": true,
-  "solargraph.hover": true,
-  "coc.preferences.formatOnSaveFiletypes": ["ruby"]
+  "solargraph.hover": true
 }
