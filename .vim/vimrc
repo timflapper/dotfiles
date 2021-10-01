@@ -125,3 +125,9 @@ nnoremap Q <Nop>
 let g:fzf_layout = { 'down': '40%' }
 
 nmap <leader><leader><leader><leader><leader><leader>l <Plug>NetrwRefresh
+
+if has('macunix')
+  let g:OmniSharp_server_use_mono = 1
+else
+  let g:OmniSharp_translate_cygwin_wsl = 1
+endif
