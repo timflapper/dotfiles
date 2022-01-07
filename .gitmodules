@@ -73,3 +73,6 @@
 [submodule ".vim/pack/coc/start/coc.nvim"]
 	path = .vim/pack/coc/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule ".vim/pack/plugins/start/vim-test"]
+	path = .vim/pack/plugins/start/vim-test
+	url = git@github.com:vim-test/vim-test.git
