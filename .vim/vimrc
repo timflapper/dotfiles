@@ -68,12 +68,14 @@ inoremap <Right> <NOP>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
-nnoremap <leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <leader>s :call RunNearestSpec()<CR>
-nnoremap <leader>l :call runLastSpec()<CR>
-nnoremap <leader>a :call RunAllSpecs()<CR>
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
-let g:rspec_command = "Dispatch rspec {spec}"
+let test#strategy = "dispatch"
+
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore node_modules -i -f -g ""'
 let $FZF_DEFAULT_OPTS = '-i'
 let g:ackprg = 'ag --ignore node_modules -f --vimgrep -i'
