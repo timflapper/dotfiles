@@ -1,7 +1,7 @@
 set nocompatible
 
 function! IsWSL()
-  if has("unix")
+  if isdirectory('/mnt/c/Windows')
     let lines = readfile("/proc/version")
     if lines[0] =~ "Microsoft"
       return 1

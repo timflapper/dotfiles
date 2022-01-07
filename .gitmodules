@@ -22,9 +22,6 @@
 [submodule ".vim/pack/plugins/start/vim-ruby"]
 	path = .vim/pack/plugins/start/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule ".vim/pack/plugins/start/vim-rspec"]
-	path = .vim/pack/plugins/start/vim-rspec
-	url = https://github.com/thoughtbot/vim-rspec.git
 [submodule ".vim/pack/plugins/start/vim-rails"]
 	path = .vim/pack/plugins/start/vim-rails
 	url = https://github.com/tpope/vim-rails.git
