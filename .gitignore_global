@@ -12,6 +12,9 @@
 tags
 tags.lock
 
+# Vim session files
+Session.vim
+
 *.orig
 
 .DS_Store
