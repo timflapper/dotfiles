@@ -153,8 +153,6 @@ export GPG_TTY=$(tty)
 export FZF_DEFAULT_COMMAND='ag --ignore node_modules -i -f -g ""'
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
-if [ -f '~/.bin/tmuxinator.zsh' ]; then . '~/.bin/tmuxinator.zsh'; fi
-
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 
