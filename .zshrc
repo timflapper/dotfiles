@@ -77,7 +77,6 @@ export NVM_AUTOLOAD=1
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
   plugins=(
     git
-    terminalapp
     history
     history-substring-search
     node
@@ -85,7 +84,6 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
     rails
     rake
     bundler
-    zsh_reload
     docker
     ssh-agent
     vi-mode
@@ -96,7 +94,6 @@ else
     history
     history-substring-search
     node
-    zsh_reload
     ssh-agent
     vi-mode
   )
