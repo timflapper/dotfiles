@@ -55,6 +55,9 @@ set splitbelow
 
 filetype indent on
 
+" Stop Found a swap file message
+set shortmess=A
+
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -99,7 +102,7 @@ set rtp+=/usr/local/opt/fzf
 
 let g:slime_target = "tmux"
 
-set clipboard=unnamed
+set clipboard+=unnamed
 
 map <leader>fj <Esc>:%!jq '.'<CR>
 

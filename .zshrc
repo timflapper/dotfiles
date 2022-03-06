@@ -139,6 +139,7 @@ alias e="vim"
 
 alias zshconfig="e ~/.zshrc"
 alias ohmyzsh="e ~/.oh-my-zsh"
+alias src="omz reload"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
