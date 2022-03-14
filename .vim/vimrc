@@ -141,6 +141,14 @@ let g:fzf_layout = { 'down': '40%' }
 
 nmap <leader><leader><leader><leader><leader><leader>l <Plug>NetrwRefresh
 
+set foldmethod=syntax
+set foldlevelstart=20
+let ruby_fold = 1
+
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+
 if IsWSL()
   let g:OmniSharp_translate_cygwin_wsl = 1
 
