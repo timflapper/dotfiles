@@ -98,7 +98,7 @@ autocmd FileType vue syntax sync fromstart
 
 set colorcolumn=80
 
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 
 let g:slime_target = "tmux"
 
@@ -143,6 +143,7 @@ nmap <leader><leader><leader><leader><leader><leader>l <Plug>NetrwRefresh
 
 set foldmethod=manual
 let ruby_fold = 1
+set foldlevelstart=99
 
 if IsWSL()
   let g:OmniSharp_translate_cygwin_wsl = 1
@@ -182,3 +183,5 @@ augroup ObsessionGroup
       \   endif |
       \ endif
 augroup END
+
+let g:coc_node_path = '/usr/local/bin/node'

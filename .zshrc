@@ -18,11 +18,6 @@ export LC_ALL="en_US.UTF-8"
 # else
 #   ZSH_THEME="agnoster"
 # fi
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-export NVM_AUTOLOAD=1
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -74,12 +69,15 @@ export NVM_AUTOLOAD=1
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh" --no-use  # This loads nvm
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
   plugins=(
     git
     history
     history-substring-search
-    node
     brew
     rails
     rake
@@ -157,3 +155,21 @@ export GOBIN=$GOPATH/bin
 if [ -f '/usr/local/opt/google-cloud-sdk/path.zsh.inc' ]; then
   source /usr/local/opt/google-cloud-sdk/path.zsh.inc
 fi
+
+NVM_DIRTY=false
+
+node() {
+  if [[ -f ".nvmrc" ]]; then
+    nvm use --silent
+    NVM_DIRTY=true
+
+    $(nvm which --silent) $@
+  elif [[ $NVM_DIRTY = true ]]; then
+    nvm use default
+    NVM_DIRTY=false
+
+    $(nvm which node) $@
+  else
+    $(nvm which node) $@
+  fi
+}
