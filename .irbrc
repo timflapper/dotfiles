@@ -1,5 +1,4 @@
 require 'irb/completion'
-require 'irb/ext/save-history'
 
 # Save-history does not work out of the box.
 # http://stackoverflow.com/questions/2065923/irb-history-not-working

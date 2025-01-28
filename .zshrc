@@ -1,9 +1,11 @@
 [ -f ~/.zsh_profile ] && source ~/.zsh_profile
 
 # If you come from bash you might have to change your $PATH.
-export PATH="/usr/local/sbin:$PATH"
+export PATH="~/bin:/usr/local/sbin:$PATH"
 export PATH=$HOME/Library/Android/sdk/build-tools/28.0.3:$HOME/bin:$HOME/.bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
+
+export CPLUS_INCLUDE_PATH=/opt/homebrew/include
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -139,6 +141,8 @@ alias zshconfig="e ~/.zshrc"
 alias ohmyzsh="e ~/.oh-my-zsh"
 alias src="omz reload"
 
+alias ggprune='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Add local bin directory to path for easy access
@@ -156,20 +160,25 @@ if [ -f '/usr/local/opt/google-cloud-sdk/path.zsh.inc' ]; then
   source /usr/local/opt/google-cloud-sdk/path.zsh.inc
 fi
 
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+export CLOUDSDK_PYTHON=/opt/homebrew/bin/python3.12
+
 NVM_DIRTY=false
 
-node() {
-  if [[ -f ".nvmrc" ]]; then
-    nvm use --silent
-    NVM_DIRTY=true
+# node() {
+#   if [[ -f ".nvmrc" ]]; then
+#     nvm use --silent
+#     NVM_DIRTY=true
+# 
+#     $(nvm which --silent) $@
+#   elif [[ $NVM_DIRTY = true ]]; then
+#     nvm use default
+#     NVM_DIRTY=false
+# 
+#     $(nvm which node) $@
+#   else
+#     $(nvm which node) $@
+#   fi
+# }
 
-    $(nvm which --silent) $@
-  elif [[ $NVM_DIRTY = true ]]; then
-    nvm use default
-    NVM_DIRTY=false
-
-    $(nvm which node) $@
-  else
-    $(nvm which node) $@
-  fi
-}
+eval "$(mise activate zsh)"

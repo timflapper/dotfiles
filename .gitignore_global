@@ -18,3 +18,5 @@ Session.vim
 *.orig
 
 .DS_Store
+
+.solargraph.yml
